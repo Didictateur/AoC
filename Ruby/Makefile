@@ -12,6 +12,7 @@ total:
 		ruby $(YEAR)/$$day/main.rb $(YEAR) $$day; \
 	done
 
-last:
+latest:
 	@clear
+	@echo "Day $(shell ls $(YEAR) | tail -n 1)\n"
 	@ruby $(YEAR)/$(shell ls $(YEAR) | tail -n 1)/main.rb $(YEAR) $(shell ls $(YEAR) | tail -n 1)

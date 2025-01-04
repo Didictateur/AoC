@@ -8,13 +8,16 @@ test = Parse.test(year, day, true)
 
 # Part 1
 
+def valide(a, b)
+  1 <= a - b && a - b <= 3
+end
+
 def part1(data)
   score = 0
   data.each do |row|
-    if row.each_cons(2).all? { |a, b| 1 <= a - b and a - b <= 3 }
+    if row.each_cons(2).all? { |a, b| valide(a, b) }
       score += 1
-    end
-    if row.each_cons(2).all? { |a, b| 1 <= b - a and b - a <= 3 }
+    elsif row.each_cons(2).all? { |a, b| valide(b, a) }
       score += 1
     end
   end

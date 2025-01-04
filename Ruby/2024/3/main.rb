@@ -11,9 +11,7 @@ test = Parse.test(year, day, false)
 def part1(data)
   score = 0
   data.each do |line|
-    line.to_s.scan(/mul\((\d{1,3}),(\d{1,3})\)/).each do |a, b|
-      score += a.to_i * b.to_i
-    end
+    line.to_s.scan(/mul\((\d{1,3}),(\d{1,3})\)/).each { |a, b| score += a.to_i * b.to_i }
   end
   score
 end
