@@ -56,8 +56,29 @@ puts "  Data: #{part1(data)}"
 
 # Part 2
 
+def compare(a, b, rules)
+  if rules.include?([a, b]) # a < b
+    return -1
+  elsif rules.include?([b, a]) # a > b
+    return 1
+  else
+    return 0 # a ~ b
+  end
+end
+
+def sort(update, rules)
+  update.sort { |a, b| compare(a, b, rules) }
+end
+
 def part2(data)
   score = 0
+  rules = getrul(data)
+  list = getlist(data)
+  list.each do |update|
+    if respect(rules, update).zero?
+      score += sort(update, rules)[(update.length/2)]
+    end
+  end
   score
 end
 
