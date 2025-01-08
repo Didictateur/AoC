@@ -9,7 +9,7 @@ module Parse
     lines
   end
 
-  def self.test(year, day, int=false)
+  def self.dataTest(year, day, int=false)
     data = File.open("#{year}/#{day}/test.txt", "r")
     lines = data.readlines.map do |line|
       line.chomp.split(" ")

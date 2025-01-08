@@ -4,7 +4,7 @@ year = ARGV[0]
 day = ARGV[1]
 
 data = Parse.data(year, day, false)
-test = Parse.test(year, day, false)
+dataTest = Parse.dataTest(year, day, false)
 
 # Part 1
 
@@ -17,7 +17,7 @@ def part1(data)
 end
 
 puts "Part 1:"
-puts "  Test: #{part1(test)}"
+puts "  Test: #{part1(dataTest)}"
 puts "  Data: #{part1(data)}"
 
 # Part 2
@@ -40,5 +40,5 @@ def part2(data)
 end
 
 puts "Part 2:"
-puts "  Test: #{part2(test)}"
+puts "  Test: #{part2(dataTest)}"
 puts "  Data: #{part2(data)}"
