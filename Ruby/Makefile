@@ -7,12 +7,12 @@ all:
 
 total:
 	@clear
-	@for day in $(shell ls $(YEAR)); do \
+	@for day in $(shell ls $(YEAR) | sort -n); do \
 		echo "\nDay $$day"; \
 		ruby $(YEAR)/$$day/main.rb $(YEAR) $$day; \
 	done
 
 latest:
 	@clear
-	@echo "Day $(shell ls $(YEAR) | tail -n 1)\n"
-	@ruby $(YEAR)/$(shell ls $(YEAR) | tail -n 1)/main.rb $(YEAR) $(shell ls $(YEAR) | tail -n 1)
+	@echo "Day $(shell ls $(YEAR) | sort -n | tail -n 1)\n"
+	@ruby $(YEAR)/$(shell ls $(YEAR) | sort -n | tail -n 1)/main.rb $(YEAR) $(shell ls $(YEAR) | sort -n | tail -n 1)
