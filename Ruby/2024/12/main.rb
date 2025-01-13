@@ -145,4 +145,5 @@ end
 
 puts "Part 2:"
 puts "  Test: #{part2(dataTest)}"
+puts "TODO : penser aux parties encerclantes d'une zone"
 # puts "  Data: #{part2(data)}"
